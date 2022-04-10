@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	var all = util.Get_words_from_file("./words/answers.txt")
+	var all = util.Get_words_from_file("./words/all.txt")
 	var possible = util.Get_words_from_file("./words/all.txt")
 
 	reader := bufio.NewReader(os.Stdin)
@@ -19,16 +19,16 @@ func main() {
 
 	// Print out the best starters (precomputed because it takes a long time)
 	util.Format_results([]util.Result{
-		{Score: 5.377566338603813, Word: "trace"},
-		{Score: 5.303611974124567, Word: "salet"},
-		{Score: 5.294365346728447, Word: "parse"},
-		{Score: 5.287056928899425, Word: "crate"},
-		{Score: 5.230307126327275, Word: "carte"},
-		{Score: 5.223432537531815, Word: "peart"},
-		{Score: 5.221421829329374, Word: "slate"},
-		{Score: 5.2029841856220935, Word: "reast"},
-		{Score: 5.186305073551834, Word: "caret"},
-		{Score: 5.172858791190428, Word: "carle"},
+		{Word: "tares", Score: 8.464541687215732},
+		{Word: "teras", Score: 8.384621063737569},
+		{Word: "pelas", Score: 8.330901493791202},
+		{Word: "peats", Score: 8.246791141310844},
+		{Word: "tears", Score: 8.134442220668847},
+		{Word: "bares", Score: 8.085543735774847},
+		{Word: "dores", Score: 8.084691108022328},
+		{Word: "pears", Score: 8.082520569242503},
+		{Word: "pores", Score: 8.055957327018294},
+		{Word: "peart", Score: 8.027039950859331},
 	})
 
 	for {
@@ -60,6 +60,6 @@ func main() {
 		fmt.Printf("There are %v words left. \n", len(possible))
 
 		// Get best word
-		util.Format_results(game.Get_best_words(all, possible))
+		util.Format_results(game.Get_best_words(possible, all))
 	}
 }
