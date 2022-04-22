@@ -2,6 +2,10 @@
 
 This was inspired by https://www.youtube.com/watch?v=v68zYyaEmEA. I used 3B1B's algorithm to create a similar bot.
 
+### Usage
+
+Run `go run ./cmd/game/main.go` and enter the word you chose. Then the program will prompt you for the pattern that you got back. A 2 is a green letter, a 1 is a yellow letter and a 0 is a gray letter. If you entered `thorn` for example, and the `t` (first letter) was green, the `h` (second letter) was yellow and the rest were gray you would enter: `2 1 0 0 0`.
+
 ```
      Wordle Bot
 --------------------- 
